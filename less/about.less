@@ -1,45 +1,106 @@
-.about {
+.about-hero {
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: center;
+  align-items: center;
   width: 100%;
-  height: auto;
-  top: -60px;
+  height: 100vh;
   bottom: 0px;
-  z-index: 9;
+  z-index: 10;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 70px 0 55px 0;
-  background-color: @secondary-color;
+  background-color: @porcelain;
   background-size: cover;
 
-  @media @phone {
-    height: auto;
-    width: auto;
-    top: -54px;
-    padding: 220px 10px 70px;
+  .about-content-container {
+    @media @phone {
+      width: 90%
+    }
+
+    .about-hero-inner {
+      img {
+        @media @phone {
+          width: 100%
+        }
+      }
+    }
   }
+}
 
-  .intro-container {
-    margin: 0 auto;
+.who {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 20px 20px 60px 20px;
+  background-color: @porcelain;
 
-    .intro-heading {
+  .who-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    .who-content {
       text-align: center;
+
+      h2 {
+        font-size: 2.7rem;
+        font-weight: 700;
+        color: @accent-color;
+        margin-bottom: 55px;
+        text-align: center;
+
+        @media @phone {
+          font-size: 2.4rem;
+        }
+      }
+      p {
+        max-width: 640px;
+      }
+    }
+  }
+}
+
+.what {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 95px 20px 60px 20px;
+  background-color: @porcelain;
+
+  .what-container {
+
+    h2 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: @accent-color;
+      margin-bottom: 55px;
+      text-align: center;
+
+      @media @phone {
+        font-size: 2.4rem;
+      }
+    }
+    .what-content {
+      margin-bottom: 70px;
 
       h3 {
         font-size: 2.2rem;
         line-height: 1;
-        color: @porcelain;
+        color: @primary-color;
         margin-bottom: 35px;
 
         @media @phone {
           font-size: 1.9rem;
         }
-
-        span {
-          color: @accent-color;
-        }
+      }
+      p {
+        max-width: 740px;
       }
     }
   }

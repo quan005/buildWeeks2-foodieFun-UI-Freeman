@@ -77,3 +77,93 @@ function fixedMobileNav() {
 };
 
 window.addEventListener("scroll", fixedMobileNav);
+
+
+// ----- Animations & Transitions ----- //
+
+// ---- Home Hero ---- //
+const hero = new TimelineLite({paused : true});
+
+hero.to(".hero-bg-left", .3, {
+  width: "65%",
+  ease: Power1.easeIn
+})
+.to("#hero-pic", .5, {
+  right: "15%",
+  ease: Power1.easeIn
+})
+.to(".hero-inner", .5, {
+  opacity: "1",
+  ease: Power1.easeIn
+})
+.staggerFromTo(".logo-container", .2, {
+  y: -80,
+  ease: Power1.easeIn
+}, {
+  y: 0,
+})
+.staggerFromTo(".animate-nav li", .2, {
+  y: -70,
+  ease: Power1.easeIn
+}, {
+  y: 0,
+}, .1)
+.staggerFromTo(".login-button", .2, {
+  y: -70,
+  ease: Power1.easeIn
+}, {
+  y: 0,
+})
+.fromTo(".hero-icon-container", 1, {
+  opacity: 0,
+  ease: Power1.easeIn
+}, {
+  opacity: 1,
+})
+.fromTo(".scroll", 1, {
+  opacity: 0,
+  y: -50,
+  ease: Power1.easeIn
+}, {
+  opacity: 1,
+  y: 0,
+});
+
+const mobileHero = new TimelineLite({paused : true});
+
+// mobileHero.to("#hero-pic", .5, {
+//   right: "15%",
+//   ease: Power1.easeIn
+// })
+// .to(".hero-inner", .5, {
+//   opacity: "1",
+//   ease: Power1.easeIn
+// })
+// .staggerFromTo(".logo-container", .2, {
+//   y: -80,
+//   ease: Power1.easeIn
+// }, {
+//   y: 0,
+// })
+// .staggerFromTo(".login-button", .2, {
+//   y: -70,
+//   ease: Power1.easeIn
+// }, {
+//   y: 0,
+// })
+// .fromTo(".hero-icon-container", 1, {
+//   opacity: 0,
+//   ease: Power1.easeIn
+// }, {
+//   opacity: 1,
+// })
+
+
+
+window.addEventListener("load", () => {
+  if(width <= 767) {
+    console.log("no animation here");
+  } else {
+    hero.play();
+  }
+});
