@@ -48,10 +48,15 @@
         letter-spacing: 2px;
 
         li {
+
           a {
             .main-font(1em, 600, .25em, @primary-color);
             text-decoration: none;
             margin: 0 20px;
+
+            &:hover{
+              color: @accent-color;
+            }
           }
         }
       }
@@ -171,6 +176,7 @@
 
       &:nth-child(3){
         transition: all 0.5s ease 0.6s;
+        margin-bottom: 60px
       }
 
       &:nth-child(4){
@@ -180,6 +186,10 @@
       a {
         .main-font(1.25em, 400, .25em, @porcelain);
         text-decoration: none;
+
+        &:hover{
+          color: @accent-color;
+        }
       }
     }
 
@@ -252,6 +262,10 @@
         font-size: 1em !important;
         font-weight: 400 !important;
         color: @porcelain !important;
+
+        &:hover{
+          color: @accent-color !important;
+        }
       }
     }
   }
@@ -259,4 +273,6 @@
 
 .hidden {
   display: none;
+  opacity: 0;
+  cursor: none;
 }

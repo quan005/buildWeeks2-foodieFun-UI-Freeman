@@ -84,11 +84,17 @@ window.addEventListener("scroll", fixedMobileNav);
 // ---- Home Hero ---- //
 const hero = new TimelineLite({paused : true});
 
-hero.to(".hero-bg-left", .3, {
+hero.fromTo(".hero-bg-left", .3, {
+  width: "0%",
+  ease: Power1.easeIn
+}, {
   width: "65%",
   ease: Power1.easeIn
 })
-.to("#hero-pic", .5, {
+.fromTo("#hero-pic", .5, {
+  right: "-50%",
+  ease: Power1.easeIn
+}, {
   right: "15%",
   ease: Power1.easeIn
 })
@@ -96,7 +102,7 @@ hero.to(".hero-bg-left", .3, {
   opacity: "1",
   ease: Power1.easeIn
 })
-.staggerFromTo(".logo-container", .2, {
+.staggerFromTo(".og-logo-container", .2, {
   y: -80,
   ease: Power1.easeIn
 }, {
@@ -135,10 +141,10 @@ const mobileHero = new TimelineLite({paused : true});
 //   right: "15%",
 //   ease: Power1.easeIn
 // })
-// .to(".hero-inner", .5, {
-//   opacity: "1",
-//   ease: Power1.easeIn
-// })
+mobileHero.to(".hero-inner", 1, {
+  opacity: "1",
+  ease: Power1.easeIn
+});
 // .staggerFromTo(".logo-container", .2, {
 //   y: -80,
 //   ease: Power1.easeIn
@@ -162,7 +168,7 @@ const mobileHero = new TimelineLite({paused : true});
 
 window.addEventListener("load", () => {
   if(width <= 767) {
-    console.log("no animation here");
+    mobileHero.play();
   } else {
     hero.play();
   }
