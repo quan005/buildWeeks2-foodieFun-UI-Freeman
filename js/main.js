@@ -19,11 +19,9 @@ const navBar = document.querySelector(".mobile-header nav");
 // this determines which header to use Mobile or Desktop //
 function whichHeader() {
   if(width <= 767) {
-    ogHeader.classList.add("hidden");
     mobileHeader.classList.remove("hidden");
   } else {
     ogHeader.classList.remove("hidden");
-    mobileHeader.classList.add("hidden");
   }
 };
 

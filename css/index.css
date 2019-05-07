@@ -1,7 +1,7 @@
 /* -------- Phone Media Query -------- */
 /* -------- Tablet Media Query -------- */
 /* -------- Landscape Media Query -------- */
-@landscape (max-width: 767px);
+/* -------- Large Screens Media Query -------- */
 .center {
   display: flex;
   justify-content: center;
@@ -462,6 +462,7 @@ input,
 select {
   vertical-align: middle;
 }
+html,
 body {
   background-color: #F6F7F8;
   font-family: 'Open Sans', sans-serif;
@@ -816,6 +817,11 @@ p {
     left: 0;
   }
 }
+@media (min-width: 1700px) {
+  .hero .hero-bg-left .hero-inner {
+    left: 20rem;
+  }
+}
 @media (max-width: 500px) {
   .hero .hero-bg-left .hero-inner .hero-content {
     top: 10px;
@@ -921,6 +927,12 @@ p {
     bottom: -35%;
     margin-left: -162.5px;
     z-index: 10;
+  }
+}
+@media (min-width: 1700px) {
+  .hero #hero-pic {
+    bottom: 1%;
+    width: 875px;
   }
 }
 .hero .scroll {
